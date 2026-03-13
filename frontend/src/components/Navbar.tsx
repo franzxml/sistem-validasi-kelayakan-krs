@@ -15,8 +15,8 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Fitur", href: "#fitur" },
-    { name: "Cara Kerja", href: "#cara-kerja" },
+    { name: "Fitur", href: "/#fitur" },
+    { name: "Cara Kerja", href: "/#cara-kerja" },
   ];
 
   return (
@@ -33,14 +33,14 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-12">
           {navLinks.map((item) => (
-            <a 
+            <Link 
               key={item.name} 
               href={item.href} 
               className="text-sm font-bold text-slate-500 hover:text-slate-950 transition-colors relative group"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-slate-950 rounded-full transition-all duration-500 group-hover:w-full" />
-            </a>
+            </Link>
           ))}
           <Link 
             href="/sistem" 
@@ -63,14 +63,14 @@ export default function Navbar() {
       <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-[300px] border-t border-slate-100 bg-white" : "max-h-0"}`}>
         <div className="flex flex-col p-6 gap-6">
           {navLinks.map((item) => (
-            <a 
+            <Link 
               key={item.name} 
               href={item.href} 
               onClick={() => setIsMenuOpen(false)}
               className="text-sm font-bold text-slate-600 hover:text-slate-950 transition-colors"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           <Link 
             href="/sistem" 

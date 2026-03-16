@@ -41,9 +41,10 @@ export default function Hero() {
     const sksNum = parseInt(sks, 10);
     if (isNaN(ipkNum) || isNaN(sksNum)) return;
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/sistem", {
+      const response = await fetch(`${apiUrl}/sistem`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ipk: ipkNum, sks: sksNum }),

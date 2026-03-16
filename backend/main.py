@@ -1,19 +1,16 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from fuzzy_logic import get_fuzzy_status
+try:
+    from .fuzzy_logic import get_fuzzy_status
+except ImportError:
+    from fuzzy_logic import get_fuzzy_status
 
 app = FastAPI()
 
-# Ganti dengan domain Vercel kamu nanti
-origins = [
-    "http://localhost:3000",
-    "https://sv-kelayakan-krs.vercel.app", 
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"], # Izinkan semua origin agar frontend terpisah bisa akses
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

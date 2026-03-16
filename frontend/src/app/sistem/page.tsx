@@ -186,13 +186,13 @@ export default function SistemPage() {
                         <div className="absolute inset-0 bg-blue-600/20 blur-2xl" />
                         <div className="relative z-10">
                           <p className="text-xs font-black tracking-widest uppercase text-slate-400 mb-2">Skor Kelayakan</p>
-                          <p className="text-6xl md:text-8xl font-[1000] tracking-tighter text-blue-400">{result.nilai_kelayakan}</p>
+                          <p className="text-6xl md:text-8xl font-[1000] tracking-tighter text-blue-400">{result?.nilai_kelayakan}</p>
                           
                           <div className={`mt-6 inline-block px-8 py-3 rounded-full font-black text-sm md:text-base tracking-widest uppercase ${
-                            result.status_kelayakan === 'Layak' ? 'bg-emerald-500 text-white' : 
-                            result.status_kelayakan === 'Dipertimbangkan' ? 'bg-amber-500 text-white' : 'bg-rose-500 text-white'
+                            result?.status_kelayakan === 'Layak' ? 'bg-emerald-500 text-white' : 
+                            result?.status_kelayakan === 'Dipertimbangkan' ? 'bg-amber-500 text-white' : 'bg-rose-500 text-white'
                           }`}>
-                            {result.status_kelayakan}
+                            {result?.status_kelayakan}
                           </div>
                         </div>
                       </div>

@@ -156,13 +156,13 @@ export default function Hero() {
                   <div className="h-full w-full flex flex-col items-center justify-center p-8 space-y-6 text-center">
                     <p className="text-xs font-black tracking-widest uppercase text-slate-400">Hasil Analisis</p>
                     <div className="text-7xl md:text-9xl font-[1000] tracking-tighter text-blue-600 drop-shadow-2xl">
-                      {result.nilai_kelayakan}
+                      {result?.nilai_kelayakan}
                     </div>
                     <div className={`px-8 py-3 rounded-full font-black text-white tracking-widest uppercase shadow-lg ${
-                      result.status_kelayakan === 'Layak' ? 'bg-emerald-500' : 
-                      result.status_kelayakan === 'Dipertimbangkan' ? 'bg-amber-500' : 'bg-rose-500'
+                      result?.status_kelayakan === 'Layak' ? 'bg-emerald-500' : 
+                      result?.status_kelayakan === 'Dipertimbangkan' ? 'bg-amber-500' : 'bg-rose-500'
                     }`}>
-                      {result.status_kelayakan}
+                      {result?.status_kelayakan}
                     </div>
                     <button onClick={() => setResult(null)} className="text-xs font-bold text-slate-400 hover:text-slate-950 transition-colors uppercase tracking-widest">
                       Cek Ulang

@@ -43,5 +43,6 @@ def proses_sistem(krs_input: KRSInput):
         "ipk": krs_input.ipk,
         "sks": krs_input.sks,
         "nilai_kelayakan": hasil["score"],
-        "status_kelayakan": hasil["label"]
+        "status_kelayakan": hasil["label"],
+        "detail": hasil["detail"],
     }

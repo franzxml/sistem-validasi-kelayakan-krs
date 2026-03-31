@@ -165,9 +165,15 @@ export default function Hero() {
                     }`}>
                       {result?.status_kelayakan}
                     </div>
-                    <button onClick={() => setResult(null)} className="text-xs font-bold text-slate-400 hover:text-slate-950 transition-colors uppercase tracking-widest">
-                      Cek Ulang
-                    </button>
+                    <div className="flex items-center gap-4">
+                      <button onClick={() => setResult(null)} className="text-xs font-bold text-slate-400 hover:text-slate-950 transition-colors uppercase tracking-widest">
+                        Cek Ulang
+                      </button>
+                      <span className="text-slate-300">|</span>
+                      <Link href={`/sistem?ipk=${ipk}&sks=${sks}`} className="text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors uppercase tracking-widest">
+                        Lihat Detail
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>

@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev:frontend": "npm run dev --workspace=frontend",
-    "dev:backend": "cd backend && source venv/bin/activate && uvicorn main:app --reload",
+    "dev:backend": "cd backend && source venv/bin/activate && uvicorn api.index:app --reload",
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
   },
   "devDependencies": {
